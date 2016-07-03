@@ -1,0 +1,7 @@
+<h1 align="center">welcom    <%= @user.username %></h1>
+<div class="container" align="center">
+	<%= image_tag @user.gravatar_url, class: "img-circle"%>
+</div>
+<div class="container">
+	<%= render 'articles/article', obj: @user.articles %>
+</div>
