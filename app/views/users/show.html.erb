@@ -2,6 +2,12 @@
 <div class="container" align="center">
 	<%= image_tag @user.gravatar_url, class: "img-circle"%>
 </div>
+<div align="center">
+	<%= will_paginate @user_articles %>
+</div>
 <div class="container">
-	<%= render 'articles/article', obj: @user.articles %>
+	<%= render 'articles/article', obj: @user_articles %>
+</div>
+<div align="center">
+	<%= will_paginate @user_articles %>
 </div>
