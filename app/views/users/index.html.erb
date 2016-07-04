@@ -10,6 +10,9 @@
 			<li><%= image_tag user.gravatar_url, class: 'img-circle' %></li>
 			<li class="article-title"> <%= link_to user.username, user_path(user) %></li>
 			<li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
+			<% if logged_in? and current_user.admin? %>
+			<li><%= link_to 'delete user', user_path(user), method: :delete, data: {confirm: "are you sure to delete this user"}   %></li>
+			<% end %>
 		</div>
 	</div>
 </ul>
